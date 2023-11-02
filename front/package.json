@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/register": "^7.22.15",
+    "@emotion/babel-plugin": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@loadable/component": "^5.15.3",
