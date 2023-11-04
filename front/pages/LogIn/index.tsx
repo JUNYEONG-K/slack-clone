@@ -9,6 +9,14 @@ import fetcher from "@utils/fetcher";
 const LogIn = () => {
     const { data, error, mutate } = useSWR('http://localhost:3095/api/users', fetcher);
 
+    // SWR 활용
+    // const { data, error, mutate } = useSWR(
+    //     'hello',
+    //     (key) => {
+    //         localStorage.setItem('data', key);
+    //         return localStorage.getItem('data');
+    //     });
+
     const [logInError, setLogInError] = useState(false);
     const [email, onChangeEmail] = useInput('');
     const [password, onChangePassword] = useInput('');
