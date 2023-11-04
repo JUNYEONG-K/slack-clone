@@ -3,7 +3,7 @@ import { Success, Form, Error, Label, Input, LinkContainer, Button, Header } fro
 import axios from 'axios';
 import React, { useCallback, useState } from 'react';
 import {Link, Navigate} from 'react-router-dom';
-import useSWR, {mutate} from 'swr';
+import useSWR from 'swr';
 import fetcher from "@utils/fetcher";
 
 const LogIn = () => {
