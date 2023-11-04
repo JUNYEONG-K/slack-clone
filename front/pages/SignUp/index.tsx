@@ -2,6 +2,7 @@ import React, {useCallback, useState} from "react";
 import { Form, Label, Input, Button, Header, Error, Success, LinkContainer } from "@pages/SignUp/styles";
 import axios from 'axios';
 import useInput from "@hooks/useInput";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
     const [email, onChangeEmail] = useInput('');
@@ -33,7 +34,7 @@ const SignUp = () => {
             setSignUpError('');
 
             // 비동기 요청
-            axios.post('/api/users', {
+            axios.post('https://localhost:3095/api/users', {
                 email, nickname, password,
             })
                 .then((res) => {
@@ -90,8 +91,7 @@ const SignUp = () => {
             </Form>
             <LinkContainer>
                 이미 회원이신가요?&nbsp;
-                <a href="/login">로그인 하러가기</a>
-                {/*<Link to="/login">로그인 하러가기</Link>*/}
+                <Link to="/login">로그인 하러가기</Link>
             </LinkContainer>
         </div>
     );
