@@ -25,7 +25,7 @@ const LogIn = () => {
                     },
                 )
                 .then((response) => {
-                    mutate();
+                    mutate(response.data, { revalidate: false }); // Optimistic UI
                 })
                 .catch((error) => {
                     setLogInError(error.response?.status === 401);

@@ -12,7 +12,7 @@ const Workspace = ({ children }: { children: React.ReactNode }) => {
             withCredentials: true,
         })
             .then(() => {
-                mutate();
+                mutate(false, { revalidate: false }); // Optimistic UI
             })
     }, []);
 
