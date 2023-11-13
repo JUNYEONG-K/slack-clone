@@ -4,11 +4,9 @@ import {Container, Header} from "@pages/Channel/styles";
 
 const DirectMessage = () => {
     return (
-        <Workspace>
-            <Container>
-                <Header>DM!</Header>
-            </Container>
-        </Workspace>
+        <Container>
+            <Header>DM!</Header>
+        </Container>
     );
 };
 

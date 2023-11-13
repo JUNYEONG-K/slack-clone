@@ -2,7 +2,7 @@ import React, {useCallback} from "react";
 import useSWR from "swr";
 import fetcher from "@utils/fetcher";
 import axios from "axios";
-import {Navigate} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {
     Channels, Chats,
     Header, MenuScroll,
@@ -13,8 +13,12 @@ import {
     WorkspaceWrapper
 } from "@layouts/Workspace/styles";
 import gravatar from 'gravatar';
+import loadable from "@loadable/component";
 
-const Workspace = ({ children }: { children: React.ReactNode }) => {
+const Channel = loadable(() => import('@pages/Channel'));
+const DirectMessage = loadable(() => import('@pages/DM'));
+
+const Workspace = () => {
     const { data, error, mutate } = useSWR('http://localhost:3095/api/users', fetcher);
 
     const onLogout = useCallback(() => {
@@ -58,7 +62,10 @@ const Workspace = ({ children }: { children: React.ReactNode }) => {
                     </MenuScroll>
                 </Channels>
                 <Chats>
-                    {children}
+                    <Routes>
+                        <Route path="/channel" element={<Channel />} />
+                        <Route path="/dm" element={<DirectMessage  />} />
+                    </Routes>
                 </Chats>
             </WorkspaceWrapper>
         </div>
