@@ -4,7 +4,7 @@ import {CloseMenuButton, CreateMenu} from "@components/Menu/styles";
 type Props = {
     children: React.ReactNode;
     show: boolean;
-    onCloseMenu: () => void;
+    onCloseMenu: (e: { stopPropagation: () => void; }) => void;
     style: CSSProperties;
     closeButton?: boolean;
 }
