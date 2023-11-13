@@ -56,9 +56,9 @@ const Workspace = () => {
                         Sleact
                     </WorkspaceName>
                     <MenuScroll>
-                        <RightMenu>
-                            Right Menu
-                        </RightMenu>
+                        <MenuScroll>
+                            MenuScroll
+                        </MenuScroll>
                     </MenuScroll>
                 </Channels>
                 <Chats>
