@@ -57,8 +57,9 @@ const Workspace = ({ children }: { children: React.ReactNode }) => {
                         </RightMenu>
                     </MenuScroll>
                 </Channels>
-                <Chats>Chats</Chats>
-                {children}
+                <Chats>
+                    {children}
+                </Chats>
             </WorkspaceWrapper>
         </div>
     );
