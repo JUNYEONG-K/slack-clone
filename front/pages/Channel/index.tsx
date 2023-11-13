@@ -1,5 +1,4 @@
 import React from "react";
-import Workspace from "@layouts/Workspace";
 import {Container, Header} from "@pages/Channel/styles";
 
 const Channel = () => {
